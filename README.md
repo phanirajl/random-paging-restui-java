@@ -2,7 +2,7 @@
 Working on a backend REST service that handles access to Cassandra while passing results back to a web front-end for display? You've come to the right place if you have any paging functionality in that web application. This example shows how to jump to a given page of the results returned by Cassandra in a web application via a backend REST service.
 
 
-Contributors: [Tomasz Lelek](https://github.com/tomekl007), [Carlos Diaz](https://github.com/crdiaz324)
+Contributor(s): [Tomasz Lelek](https://github.com/tomekl007), [Carlos Diaz](https://github.com/crdiaz324) - derived from [here](https://github.com/datastax/java-driver/blob/4.x/examples/src/main/java/com/datastax/oss/driver/examples/paging/RandomPagingRestUi.java)
 
 ## Objectives
 * Demonstrate how to use the paging state returned by Cassandra and encode it in HTTP URLs for a REST application.  
@@ -39,14 +39,13 @@ This first step in the process is to build and package the application.  This ca
 
 `mvn package`
 
-This will compile the code and package it as a fat JAR file (located in target/random-paging-rest-ui-1.0-SNAPSHOT-jar-with-dependencies.jar), which contains all the dependencies needed to run the application.
+This will compile the code and package it as a fat JAR file (located in `target/random-paging-rest-ui-1.0-SNAPSHOT-jar-with-dependencies.jar`), which contains all the dependencies needed to run the application.
 
 Once you have compiled the application, you can run it with:
 
 `java -jar target/random-paging-rest-ui-1.0-SNAPSHOT-jar-with-dependencies.jar`
 
-By default, it will try to connect to your cluster at 127.0.0.1:9042, however you can change the contact points by adding a file called application.conf 
-to your class path with the following contents:
+By default, it will try to connect to your cluster at 127.0.0.1:9042, however you can change the contact points by adding a file called application.conf to your classpath with the following contents:
 
 ```
 datastax-java-driver {
